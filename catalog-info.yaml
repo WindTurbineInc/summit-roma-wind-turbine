@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: summit-roma-wind-turbine-app-dev
+  annotations:
+    argocd/app-name: summit-roma-wind-turbine-app-dev
+    backstage.io/kubernetes-id: summit-roma-wind-turbine-app
+    backstage.io/kubernetes-namespace: summit-roma
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: WindTurbineInc/summit-roma-wind-turbine
+    janus-idp.io/tekton-enabled: 'true'
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://console-openshift-console.apps.wearedevs.rl97.p1.openshiftapps.com/dev-pipelines/ns/summit-roma/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.wearedevs.rl97.p1.openshiftapps.com/k8s/ns/summit-roma/deployments/summit-roma-wind-turbine-app
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.wearedevs.rl97.p1.openshiftapps.com/#https://github.com/WindTurbineInc/summit-roma-wind-turbine?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/kdubois"
